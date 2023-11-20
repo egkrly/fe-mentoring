@@ -7,11 +7,9 @@ import {
   Text,
   Button,
   Avatar,
-  StackDivider,
   Wrap,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import UsersPage from "./users";
 
 const Home: FC = () => {
   return (
@@ -68,7 +66,7 @@ const Home: FC = () => {
               </Flex>
             </Flex>
           </Flex>
-          <Flex flex={1} width="auto" height="auto" bg="gray.700" />
+          <Flex flex={1} width="auto" height="auto" bg="gray.700"></Flex>
         </Flex>
       </Container>
     </VStack>
