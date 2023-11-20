@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import {
-  Box,
   Container,
   Flex,
   VStack,
@@ -8,8 +7,16 @@ import {
   Button,
   Avatar,
   Wrap,
+  Table,
+  TableContainer,
+  Th,
+  Thead,
+  Tr,
+  Tbody,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import UserArray from "../features/users/components/User";
+import Users from "../features/users/components/Users";
 
 const Home: FC = () => {
   return (
@@ -30,14 +37,14 @@ const Home: FC = () => {
               </Flex>
               <Wrap spacing={4} justify={"center"}>
                 <Flex>
-                  <Link href="/users">
+                  <Link href="/Users">
                     <Button colorScheme="blue" size="lg" width="150px">
                       Users
                     </Button>
                   </Link>
                 </Flex>
                 <Flex>
-                  <Link href="/users">
+                  <Link href="/Users">
                     <Button colorScheme="blue" size="lg" width="150px">
                       teszt
                     </Button>
@@ -66,7 +73,9 @@ const Home: FC = () => {
               </Flex>
             </Flex>
           </Flex>
-          <Flex flex={1} width="auto" height="auto" bg="gray.700"></Flex>
+          <Flex flex={1} width="auto" height="auto" bg="gray.700">
+            <Users />
+          </Flex>
         </Flex>
       </Container>
     </VStack>
