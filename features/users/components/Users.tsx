@@ -1,13 +1,12 @@
+import React, { FC, useState } from "react";
 import { User } from "@/features/users/types";
 import { mockUsers } from "@/features/users/utils";
-import { FC, useState } from "react";
 import UserArray from "./User";
 import {
   Button,
   Table,
   TableContainer,
   Tbody,
-  Td,
   Th,
   Thead,
   Tr,

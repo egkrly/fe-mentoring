@@ -7,15 +7,7 @@ import {
   Button,
   Avatar,
   Wrap,
-  Table,
-  TableContainer,
-  Th,
-  Thead,
-  Tr,
-  Tbody,
 } from "@chakra-ui/react";
-import Link from "next/link";
-import UserArray from "../features/users/components/User";
 import Users from "../features/users/components/Users";
 
 const Home: FC = () => {
@@ -37,18 +29,14 @@ const Home: FC = () => {
               </Flex>
               <Wrap spacing={4} justify={"center"}>
                 <Flex>
-                  <Link href="/Users">
-                    <Button colorScheme="blue" size="lg" width="150px">
-                      Users
-                    </Button>
-                  </Link>
+                  <Button colorScheme="blue" size="lg" width="150px">
+                    Main page
+                  </Button>
                 </Flex>
                 <Flex>
-                  <Link href="/Users">
-                    <Button colorScheme="blue" size="lg" width="150px">
-                      teszt
-                    </Button>
-                  </Link>
+                  <Button colorScheme="blue" size="lg" width="150px">
+                    Users
+                  </Button>
                 </Flex>
               </Wrap>
               <Flex
