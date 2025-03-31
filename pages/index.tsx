@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
 import {
   Container,
   Flex,
@@ -11,6 +11,12 @@ import {
 import Users from "../features/users/components/Users";
 
 const Home: FC = () => {
+  const [activeTab, setActiveTab] = useState<"main" | "users">("main");
+
+  const handleTabChange = (tab: "main" | "users") => {
+    setActiveTab(tab);
+  };
+
   return (
     <VStack spacing={4} align="stretch">
       <Container centerContent padding={10}>
@@ -29,12 +35,24 @@ const Home: FC = () => {
               </Flex>
               <Wrap spacing={4} justify={"center"}>
                 <Flex>
-                  <Button colorScheme="blue" size="lg" width="150px">
+                  <Button
+                    colorScheme="blue"
+                    size="lg"
+                    width="150px"
+                    variant={activeTab === "main" ? "solid" : "outline"}
+                    onClick={() => handleTabChange("main")}
+                  >
                     Main page
                   </Button>
                 </Flex>
                 <Flex>
-                  <Button colorScheme="blue" size="lg" width="150px">
+                  <Button
+                    colorScheme="blue"
+                    size="lg"
+                    width="150px"
+                    variant={activeTab === "users" ? "solid" : "outline"}
+                    onClick={() => handleTabChange("users")}
+                  >
                     Users
                   </Button>
                 </Flex>
@@ -62,7 +80,13 @@ const Home: FC = () => {
             </Flex>
           </Flex>
           <Flex flex={1} width="auto" height="auto" bg="gray.700">
-            <Users />
+            {activeTab === "users" ? (
+              <Users />
+            ) : (
+              <Flex justifyContent="center" alignItems="center" width="100%">
+                <Text fontSize="2xl">Welcome to the Main Page</Text>
+              </Flex>
+            )}
           </Flex>
         </Flex>
       </Container>
